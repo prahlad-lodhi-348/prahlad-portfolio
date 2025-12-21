@@ -1,0 +1,313 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Hero Section - IMPROVED -->
+<section id="home" class="hero d-flex align-items-center text-white">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Profile Photo - Left Side (Mobile: Top) -->
+            <div class="col-lg-3 text-center mb-4 mb-lg-0 order-lg-2">
+                <div class="profile-photo-wrapper">
+                    <img src="{% static 'images/profile.jpg' %}" alt="Prahlad Lodhi" class="profile-photo">
+                </div>
+            </div>
+            <!-- Add in hero buttons -->
+            
+            
+            <!-- Text Content - Right Side (Mobile: Bottom) -->
+            <div class="col-lg-9 order-lg-1">
+                <h1 class="display-4 fw-bold mb-3">Hi, I'm Prahlad Lodhi</h1>
+                <h2 class="h5 mb-4"><i class="fas fa-graduation-cap"></i> BTech CS | 2nd year | SDBCT Indore (RGPV Bhopal)</h2>
+                <p class="lead mb-4">Full-Stack Developer passionate about building real-world applications with Python, Django, and modern web technologies.</p>
+                <a href="#projects" class="btn btn-light btn-lg me-3"><i class="fas fa-laptop-code"></i> View Projects</a>
+                <a href="{% url 'contact' %}" class="btn btn-outline-light btn-lg"><i class="fas fa-envelope"></i> Contact Me</a>
+                <a href="{% static 'files/Prahlad_Lodhi_Resume.pdf' %}" class="btn btn-success btn-lg" download><i class="fas fa-download"></i> Download Resume</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Me Section - SIMPLE & CLEAN -->
+<section id="about" class="py-5 bg-white">
+    <div class="container">
+        <h2 class="text-center mb-5"><i class="fas fa-user"></i> About Me</h2>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card border-0 shadow-lg">
+                    <div class="card-body p-5">
+                        <div class="row">
+                            <!-- Description -->
+                            <div class="col-md-8 mb-4 mb-md-0">
+                                <h4 class="mb-3">Who I Am</h4>
+                                <p class="lead">I'm a 2nd year Computer Science student at SDBCT Indore, passionate about full-stack development and solving real-world problems through code.</p>
+                                <p>Currently working on multiple projects including a WhatsApp-like chat application and a multi-platform calculator with graphing capabilities.</p>
+                            </div>
+                            
+                            <!-- Quick Facts -->
+                            <div class="col-md-4">
+                                <div class="bg-light p-3 rounded">
+                                    <h5 class="mb-3"><i class="fas fa-star text-warning"></i> Highlights</h5>
+                                    <ul class="list-unstyled mb-0">
+                                        <li class="mb-2">✅ BTech CS (3rd Sem)</li>
+                                        <li class="mb-2">✅ Python & Django</li>
+                                        <li class="mb-2">✅ 2+ Active Projects</li>
+                                        <li class="mb-0">✅ Learning DSA & AI</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Skills Section -->
+<section id="skills" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5"><i class="fas fa-tools"></i> Technical Skills</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm hover-shadow">
+                    <div class="card-body text-center">
+                        <h5 class="card-title"><i class="fas fa-server text-primary fa-3x mb-3"></i><br>Backend Development</h5>
+                        <p class="card-text">Python • Django • SQL • PostgreSQL</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm hover-shadow">
+                    <div class="card-body text-center">
+                        <h5 class="card-title"><i class="fas fa-paint-brush text-success fa-3x mb-3"></i><br>Frontend Development</h5>
+                        <p class="card-text">HTML • CSS • JavaScript • Bootstrap</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm hover-shadow">
+                    <div class="card-body text-center">
+                        <h5 class="card-title"><i class="fas fa-chart-line text-warning fa-3x mb-3"></i><br>Data Science</h5>
+                        <p class="card-text">NumPy • Matplotlib • C++</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% comment %} education sections  {% endcomment %}
+<section id="education" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5"><i class="fas fa-graduation-cap"></i> Education</h2>
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card shadow mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">BTech in Computer Science</h5>
+                        <p class="text-muted">SDBCT Indore (RGPV Bhopal) | 2024 - 2028</p>
+                        <p>Currently in 3rd Semester, focusing on Data Structures, Algorithms, Web Development, and Database Management.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Projects Section - WITH SCREENSHOTS -->
+<section id="projects" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5"><i class="fas fa-folder-open"></i> Featured Projects</h2>
+        <div class="row g-4">
+            
+            {% comment %} <!-- Soulmate Chat App -->
+            <div class="col-lg-4">
+                <div class="card h-100 shadow hover-shadow border-0">
+                    <!-- Screenshot Image -->
+                    <img src="{% static 'images/soulmate-preview.jpg' %}" class="card-img-top" alt="Soulmate Chat App" style="height: 200px; object-fit: cover;">
+                    
+                    <div class="card-body d-flex flex-column">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-comments text-primary" style="font-size: 2rem;"></i>
+                        </div>
+                        <h5 class="card-title text-center">Soulmate Chat App</h5>
+                        <p class="card-text flex-grow-1">Cross-platform messaging app (Web, Android, iOS) built with Django backend. WhatsApp-like features with real-time messaging.</p>
+                        
+                        <!-- Tech Stack Badges -->
+                        <div class="mb-3 text-center">
+                            <span class="badge bg-primary">Django</span>
+                            <span class="badge bg-success">Python</span>
+                            <span class="badge bg-info">WebSockets</span>
+                        </div>
+                        
+                        <div class="text-center mt-auto">
+                            <a href="https://github.com/prahladlodhi/soulmate" class="btn btn-primary" target="_blank">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div> {% endcomment %}
+            <!-- Soulmate Chat App - Mockup Style -->
+<div class="col-lg-4">
+    <div class="card h-100 shadow hover-shadow border-0">
+        <!-- Mockup-style Header -->
+        <div style="height: 200px; background: linear-gradient(to bottom, #1e3c72 0%, #2a5298 100%); display: flex; align-items: center; justify-content: center; position: relative; padding: 20px;">
+            <!-- Phone Frame -->
+            <div style="background: white; border-radius: 20px; padding: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); width: 140px; height: 160px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <i class="fas fa-comments text-primary" style="font-size: 3rem; margin-bottom: 10px;"></i>
+                <div style="background: #e9ecef; width: 100%; height: 8px; border-radius: 5px; margin: 3px 0;"></div>
+                <div style="background: #e9ecef; width: 80%; height: 8px; border-radius: 5px; margin: 3px 0;"></div>
+                <div style="background: #007bff; width: 60%; height: 25px; border-radius: 8px; margin-top: 10px;"></div>
+            </div>
+            <!-- Badge -->
+            <div style="position: absolute; top: 15px; right: 15px;">
+                <span class="badge bg-warning text-dark">
+                    <i class="fas fa-wrench"></i> Building
+                </span>
+            </div>
+        </div>
+        
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title text-center mt-2">Soulmate Chat App</h5>
+            <p class="card-text flex-grow-1">Cross-platform messaging app (Web, Android, iOS) built with Django backend. WhatsApp-like features with real-time messaging.</p>
+            
+            <!-- Tech Stack Badges -->
+            <div class="mb-3 text-center">
+                <span class="badge bg-primary">Django</span>
+                <span class="badge bg-success">Python</span>
+                <span class="badge bg-info">WebSockets</span>
+            </div>
+            
+            <div class="text-center mt-auto">
+                <a href="https://github.com/prahladlodhi/soulmate" class="btn btn-primary" target="_blank">
+                    <i class="fab fa-github"></i> View Code
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+            
+            <!-- AllRounder Calc -->
+            <div class="col-lg-4">
+                <div class="card h-100 shadow hover-shadow border-0">
+                    <!-- Screenshot Image -->
+                    <img src="{% static 'images/allrounder-preview.jpg' %}" class="card-img-top" alt="AllRounder Calculator" style="height: 200px; object-fit: cover;">
+                    
+                    <div class="card-body d-flex flex-column">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-calculator text-success" style="font-size: 2rem;"></i>
+                        </div>
+                        <h5 class="card-title text-center">AllRounder Calc</h5>
+                        <p class="card-text flex-grow-1">Multi-platform financial calculator with graphing capabilities using Matplotlib and NumPy for complex calculations.</p>
+                        
+                        <!-- Tech Stack Badges -->
+                        <div class="mb-3 text-center">
+                            <span class="badge bg-success">Python</span>
+                            <span class="badge bg-warning text-dark">NumPy</span>
+                            <span class="badge bg-danger">Matplotlib</span>
+                        </div>
+                        
+                        <div class="text-center mt-auto">
+                            <a href="https://allrounder-calc.onrender.com" class="btn btn-success me-2" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/prahlad-lodhi-348" class="btn btn-outline-success btn-sm" target="_blank">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Portfolio Website -->
+            <div class="col-lg-4">
+                <div class="card h-100 shadow hover-shadow border-0">
+                    <!-- Screenshot Image -->
+                    <img src="{% static 'images/portfolio-preview.jpg' %}" class="card-img-top" alt="Portfolio Website" style="height: 200px; object-fit: cover;">
+                    
+                    <div class="card-body d-flex flex-column">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-laptop-code text-warning" style="font-size: 2rem;"></i>
+                        </div>
+                        <h5 class="card-title text-center">Portfolio Website</h5>
+                        <p class="card-text flex-grow-1">Django-powered portfolio with Bootstrap design and SQL database for feedback system. You're viewing it now!</p>
+                        
+                        <!-- Tech Stack Badges -->
+                        <div class="mb-3 text-center">
+                            <span class="badge bg-primary">Django</span>
+                            <span class="badge bg-secondary">Bootstrap</span>
+                            <span class="badge bg-dark">SQL</span>
+                        </div>
+                        
+                        <div class="text-center mt-auto">
+                            <a href="{% url 'contact' %}" class="btn btn-warning">
+                                <i class="fas fa-comment"></i> Leave Feedback
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- Feedbacks Section -->
+<section id="feedbacks" class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2><i class="fas fa-comments"></i> What People Say</h2>
+            <p class="text-muted">Recent feedback from visitors and collaborators</p>
+        </div>
+        
+        {% if feedbacks %}
+            <div class="row g-4 mb-4">
+                {% for feedback in feedbacks %}
+                <div class="col-md-6 col-lg-4">
+                    <div class="card shadow-sm h-100 border-0">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; font-size: 1.5rem;">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h6 class="mb-0">{{ feedback.name }}</h6>
+                                    <small class="text-muted">{{ feedback.created_at|date:"M d, Y" }}</small>
+                                </div>
+                            </div>
+                            <p class="card-text text-muted">"{{ feedback.comment|truncatewords:25 }}"</p>
+                            {% if feedback.project %}
+                            <span class="badge bg-light text-dark"><i class="fas fa-folder"></i> {{ feedback.project }}</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            
+            <div class="text-center">
+                <a href="{% url 'contact' %}" class="btn btn-primary btn-lg">
+                    <i class="fas fa-plus-circle"></i> Share Your Feedback
+                </a>
+            </div>
+        {% else %}
+            <div class="text-center">
+                <div class="mb-4">
+                    <i class="fas fa-comment-slash text-muted" style="font-size: 4rem;"></i>
+                </div>
+                <h5 class="text-muted mb-4">No feedback yet</h5>
+                <p class="text-muted mb-4">Be the first to share your thoughts about my projects!</p>
+                <a href="{% url 'contact' %}" class="btn btn-primary btn-lg">
+                    <i class="fas fa-comment-dots"></i> Leave First Feedback
+                </a>
+            </div>
+        {% endif %}
+    </div>
+</section>
+
+{% endblock %}
