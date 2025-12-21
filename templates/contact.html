@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% block title %}Contact - Prahlad Lodhi{% endblock %}
+{% block content %}
+
+<div class="container py-5" style="min-height: 70vh;">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="text-center mb-5">
+                <h1><i class="fas fa-envelope-open-text"></i> Get In Touch</h1>
+                <p class="lead text-muted">Have a question or want to work together? Drop me a message!</p>
+            </div>
+            
+            <div class="card shadow-lg border-0">
+                <div class="card-body p-5">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="mb-4">
+                            <label class="form-label fw-bold"><i class="fas fa-user"></i> Your Name *</label>
+                            {{ form.name }}
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="form-label fw-bold"><i class="fas fa-envelope"></i> Email Address *</label>
+                            {{ form.email }}
+                            <small class="form-text text-muted">Required - I'll respond to this email</small>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="form-label fw-bold"><i class="fas fa-comment-dots"></i> Your Message *</label>
+                            {{ form.comment }}
+                            <small class="form-text text-muted">Share your feedback, questions, or project ideas</small>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-lg w-100">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <h5 class="mb-4">Or Connect Directly</h5>
+                
+                <!-- Social Icons -->
+                <div class="d-flex justify-content-center gap-3 mb-4">
+                    <a href="https://github.com/prahlad-lodhi" class="btn btn-outline-dark btn-lg" target="_blank" title="GitHub - Main">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://github.com/prahlad-lodhi-348" class="btn btn-outline-secondary btn-lg" target="_blank" title="GitHub - Personal">
+                        <i class="fab fa-github-alt"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/prahlad-lodhi-758357335" class="btn btn-outline-primary btn-lg" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:lodhiprahlad348@gmail.com" class="btn btn-outline-danger btn-lg" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                
+                <div class="card bg-light border-0">
+                    <div class="card-body">
+                        <p class="mb-2">
+                            <i class="fas fa-envelope text-danger"></i> <strong>Primary:</strong> 
+                            <a href="mailto:lodhiprahlad348@gmail.com">lodhiprahlad348@gmail.com</a>
+                        </p>
+                        <p class="mb-2">
+                            <i class="fas fa-envelope text-secondary"></i> <strong>Alternate:</strong> 
+                            <a href="mailto:lprahlad657@gmail.com">lprahlad657@gmail.com</a>
+                        </p>
+                        <p class="mb-2">
+                            <i class="fab fa-linkedin text-primary"></i> <strong>LinkedIn:</strong> 
+                            <a href="https://www.linkedin.com/in/prahlad-lodhi-758357335" target="_blank">Prahlad Lodhi</a>
+                        </p>
+                        <p class="mb-0">
+                            <i class="fab fa-github"></i> <strong>GitHub:</strong> 
+                            <a href="https://github.com/prahladlodhi" target="_blank">@prahladlodhi</a> | 
+                            <a href="https://github.com/prahlad-lodhi-348" target="_blank">@prahlad-lodhi-348</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
